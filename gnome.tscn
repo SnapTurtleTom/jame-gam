@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cpffaym11veam"]
+
+[ext_resource type="Script" uid="uid://424v4cumbj74" path="res://gnome.gd" id="1_qe4o5"]
+[ext_resource type="Texture2D" uid="uid://b6x0803josniw" path="res://sprites/Gnome-idle/gnome-idle1.png" id="2_5vlar"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dt2vp"]
+radius = 17.029387
+
+[node name="gnome" type="CharacterBody2D" unique_id=509993801]
+script = ExtResource("1_qe4o5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=341284850]
+position = Vector2(-2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5vlar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=267362150]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_dt2vp")
