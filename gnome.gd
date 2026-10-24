@@ -3,16 +3,17 @@ class_name Player
 
 @export var speed = 400
 @onready var animated_sprite = $AnimatedSprite2D
-const HAT_MANAGER_SCENE = preload("res://hat_manager.tscn")
 
 var input_direction:= Vector2.ZERO
 var last_direction:= Vector2.ZERO
-var hat_manager: Node2D
+var current_hat: Sprite2D = null
 
 func _ready():
-	hat_manager = HAT_MANAGER_SCENE.instantiate()
-	add_child(hat_manager)
 	animated_sprite.play("forward-idle")
+	
+	for child in get_children():
+		if child is Sprite2D:
+			child.hide()
 
 func get_input():
 	input_direction = Input.get_vector("left", "right", "up", "down")
@@ -49,3 +50,10 @@ func movement_animation(input_direction: Vector2):
 		animated_sprite.play("right-walk")
 	elif input_direction.x < 0:
 		animated_sprite.play("left-walk")
+
+func change_hat(new_hat, current_hat: Sprite2D):
+	if current_hat != null:
+		current_hat.hide()
+	
+	current_hat = new_hat
+	current_hat.visible = true

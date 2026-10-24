@@ -6,15 +6,16 @@ extends CharacterBody2D
 const DIALOGUE_SCENE = preload("res://dialogue_manager.tscn")
 var in_range: bool = false
 var starting_text_done: bool = false
+var starting_hat_given: bool = false
 var dialogue_instant: Node
 var player: CharacterBody2D = null
-var hat_manager: Node2D
 
 func _ready() -> void:
 	interact_radius.body_entered.connect(_on_area_2d_body_entered)
 	interact_radius.body_exited.connect(_on_area_2d_body_exited)
 
 func _physics_process(delta: float) -> void:
+	
 	if in_range and Input.is_action_just_pressed("interact"):
 		if starting_text_done == false:
 			initialise_dialogue(["Hey there!",
@@ -22,10 +23,9 @@ func _physics_process(delta: float) -> void:
 			"What's that?",
 			"You don't have a starting hat?!?!?!",
 			"We can't allow that can we, here! This is your very own hat!"])
-			if player != null:
-				hat_manager = player.get_node("HatManager")
-				hat_manager.change_hat(hat_manager.get_node("StarterHat"), hat_manager.current_hat)
-			starting_text_done = true
+			if dialogue_instant.is_dialogue_active == false:
+				player.change_hat(player.get_node("StarterHat"), player.current_hat)
+				starting_text_done = true
 		else:
 			initialise_dialogue(["screw you"])
 

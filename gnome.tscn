@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://caomv64x8gy6a" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk2.png" id="15_jtxbi"]
 [ext_resource type="Texture2D" uid="uid://cu3lwxho2ksla" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk3.png" id="16_sed36"]
 [ext_resource type="Texture2D" uid="uid://coacppsitwvfh" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk4.png" id="17_eb768"]
+[ext_resource type="Texture2D" uid="uid://bjrj2153maw7s" path="res://sprites/icon.svg" id="19_3rudp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dt2vp"]
 animations = [{
@@ -125,4 +126,5 @@ animation = &"left-walk"
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_dt2vp")
 
-[node name="HeadMarker" type="Marker2D" parent="." unique_id=544910946]
+[node name="StarterHat" type="Sprite2D" parent="." unique_id=819065185]
+texture = ExtResource("19_3rudp")

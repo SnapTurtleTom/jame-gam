@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dahd55g8qyjjh" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle1.png" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dbiu55xljivna" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle2.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://db1je7mb0lhvj" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle3.png" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://b8etqgtvqma8y" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-talk/Hatsmith-talk.png" id="6_7mycd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5vw27"]
 animations = [{
@@ -20,6 +21,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7mycd")
+}],
+"loop": true,
+"name": &"talking",
 "speed": 5.0
 }]
 
@@ -40,6 +49,7 @@ script = ExtResource("2_h2yge")
 position = Vector2(-16, 4)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_5vw27")
+animation = &"talking"
 autoplay = "default"
 
 [node name="HatsmithCollision" type="CollisionShape2D" parent="hatsmith" unique_id=885826814]
