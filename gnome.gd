@@ -3,11 +3,15 @@ class_name Player
 
 @export var speed = 400
 @onready var animated_sprite = $AnimatedSprite2D
+const HAT_MANAGER_SCENE = preload("res://hat_manager.tscn")
 
 var input_direction:= Vector2.ZERO
 var last_direction:= Vector2.ZERO
+var hat_manager: Node2D
 
 func _ready():
+	hat_manager = HAT_MANAGER_SCENE.instantiate()
+	add_child(hat_manager)
 	animated_sprite.play("forward-idle")
 
 func get_input():

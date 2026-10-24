@@ -1,9 +1,14 @@
 extends CharacterBody2D
 
 @onready var interact_radius: Area2D = $Area2D
+@onready var head_marker: Marker2D = $HeadMarker
 
 const DIALOGUE_SCENE = preload("res://dialogue_manager.tscn")
 var in_range: bool = false
+var starting_text_done: bool = false
+var dialogue_instant: Node
+var player: CharacterBody2D = null
+var hat_manager: Node2D
 
 func _ready() -> void:
 	interact_radius.body_entered.connect(_on_area_2d_body_entered)
@@ -11,9 +16,23 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if in_range and Input.is_action_just_pressed("interact"):
-		var dialogue_instant = DIALOGUE_SCENE.instantiate()
-		add_child(dialogue_instant)
-		dialogue_instant.start_dialogue(["Yo wassup", "It's been a while"] as Array[String])
+		if starting_text_done == false:
+			initialise_dialogue(["Hey there!",
+			"I am the Hatsmith, if you collect the materials, I'll make you a funky hat!",
+			"What's that?",
+			"You don't have a starting hat?!?!?!",
+			"We can't allow that can we, here! This is your very own hat!"])
+			if player != null:
+				hat_manager = player.get_node("HatManager")
+				hat_manager.change_hat(hat_manager.get_node("StarterHat"), hat_manager.current_hat)
+			starting_text_done = true
+		else:
+			initialise_dialogue(["screw you"])
+
+func initialise_dialogue(dialogue: Array[String]):
+	dialogue_instant = DIALOGUE_SCENE.instantiate()
+	add_child(dialogue_instant)
+	dialogue_instant.start_dialogue(dialogue)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:

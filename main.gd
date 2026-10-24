@@ -7,3 +7,4 @@ func _ready() -> void:
 	player_instant.position = Vector2(0, 0)
 	
 	add_child(player_instant)
+	$hatsmith.player = player_instant
