@@ -1,6 +1,52 @@
 [gd_scene format=3 uid="uid://bfinhtgav80xx"]
 
 [ext_resource type="Script" uid="uid://bevapd5kcvy8j" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bvdbirc5evrrg" path="res://hatsmith.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dahd55g8qyjjh" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle1.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dbiu55xljivna" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle2.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://db1je7mb0lhvj" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle3.png" id="5_272bh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vw27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lquwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7mycd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_272bh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
+radius = 32.06244
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
+radius = 117.01709
 
 [node name="main" type="Node2D" unique_id=669635151]
+position = Vector2(585, 323)
 script = ExtResource("1_ig7tw")
+
+[node name="hatsmith" type="CharacterBody2D" parent="." unique_id=1539668161]
+script = ExtResource("2_h2yge")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hatsmith" unique_id=40983132]
+position = Vector2(-16, 4)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_5vw27")
+autoplay = "default"
+
+[node name="HatsmithCollision" type="CollisionShape2D" parent="hatsmith" unique_id=885826814]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_h2yge")
+
+[node name="Area2D" type="Area2D" parent="hatsmith" unique_id=2120524908]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hatsmith/Area2D" unique_id=1211568086]
+shape = SubResource("CircleShape2D_0xm2m")

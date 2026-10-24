@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bee430hkktbsd"]
+
+[ext_resource type="Script" uid="uid://d31hivnslwy3p" path="res://dialogue_manager.gd" id="1_k6lpl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iove5"]
+font_size = 32
+
+[node name="DialogueManager" type="CanvasLayer" unique_id=1140013695]
+process_mode = 3
+script = ExtResource("1_k6lpl")
+
+[node name="DialogueBox" type="Control" parent="." unique_id=831347150]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="DialogueBox" unique_id=1185609685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="DialogueText" type="Label" parent="DialogueBox" unique_id=2020373192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is the dialogue text
+"
+label_settings = SubResource("LabelSettings_iove5")
+autowrap_mode = 3

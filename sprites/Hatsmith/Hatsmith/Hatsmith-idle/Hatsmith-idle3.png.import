@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bve2ivc6l4qwy"
-path="res://.godot/imported/gnome-idle2.png-c7dc0d8c31705d1093c068bef3c7efca.ctex"
+uid="uid://db1je7mb0lhvj"
+path="res://.godot/imported/Hatsmith-idle3.png-78c20a4157a6ff5ad2e702adfc343c47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Gnome-idle/gnome-idle2.png"
-dest_files=["res://.godot/imported/gnome-idle2.png-c7dc0d8c31705d1093c068bef3c7efca.ctex"]
+source_file="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle3.png"
+dest_files=["res://.godot/imported/Hatsmith-idle3.png-78c20a4157a6ff5ad2e702adfc343c47.ctex"]
 
 [params]
 

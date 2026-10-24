@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6x0803josniw"
-path="res://.godot/imported/gnome-idle1.png-46355e8c2594172e50a5df87e657e3ab.ctex"
+uid="uid://bbgwuawgwy8hn"
+path="res://.godot/imported/Gnome-backwardswalk2.png-7ca933a1969b69d3869bcc2199dd3865.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Gnome-idle/gnome-idle1.png"
-dest_files=["res://.godot/imported/gnome-idle1.png-46355e8c2594172e50a5df87e657e3ab.ctex"]
+source_file="res://sprites/Gnome/Gnome/Gnome-backwardswalk/Gnome-backwardswalk2.png"
+dest_files=["res://.godot/imported/Gnome-backwardswalk2.png-7ca933a1969b69d3869bcc2199dd3865.ctex"]
 
 [params]
 
