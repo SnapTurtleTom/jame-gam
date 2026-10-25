@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqsi27qsispim" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://cnorgu35hvsml" path="res://sprites/Misc/Questboard.png" id="2_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://blqsw1lgt7o25" path="res://sprites/Misc/stringicon.png" id="2_yev5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyqef"]
 bg_color = Color(0.7278359, 0.3031449, 0.22326097, 1)
@@ -17,6 +18,17 @@ offset_top = 16.0
 offset_right = 320.0
 offset_bottom = 43.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_fyqef")
+max_value = 500.0
+
+[node name="StringIcon" type="Sprite2D" parent="CanvasLayer" unique_id=965561693]
+position = Vector2(1120, 32)
+texture = ExtResource("2_yev5y")
+
+[node name="StringCount" type="Label" parent="CanvasLayer" unique_id=1774491972]
+offset_left = 1078.0
+offset_top = 19.0
+offset_right = 1118.0
+offset_bottom = 42.0
 
 [node name="QuestBox" type="CanvasLayer" parent="." unique_id=1564321296]
 visible = false

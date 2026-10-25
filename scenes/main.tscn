@@ -45,10 +45,10 @@ position = Vector2(585, 323)
 script = ExtResource("1_o6xl0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2006017942]
-offset_left = -1121.0
-offset_top = -963.0
-offset_right = 1079.0
-offset_bottom = 997.0
+offset_left = -1353.0
+offset_top = -1163.0
+offset_right = 1359.0
+offset_bottom = 1229.0
 texture = ExtResource("2_85g3d")
 stretch_mode = 1
 
@@ -86,3 +86,12 @@ reached_goal_text = "Come back and I'll make a hat out of their skin"
 metadata/_custom_type_script = "uid://bd8rkh8brior2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227880966]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=769067034]
+autostart = true
+
+[node name="GoToHatsmith" type="Node" parent="." unique_id=1035487496]
+script = ExtResource("7_trceg")
+quest_name = "Talk to Hatsmth"
+quest_description = "Walk up to Hatsmith and press \"E\""
+metadata/_custom_type_script = "uid://bd8rkh8brior2"

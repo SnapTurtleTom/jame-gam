@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://cu3lwxho2ksla" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk3.png" id="16_864t2"]
 [ext_resource type="Texture2D" uid="uid://coacppsitwvfh" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk4.png" id="17_f4nhb"]
 [ext_resource type="Texture2D" uid="uid://cno52pfaxu4bg" path="res://sprites/Hats/Hats/Hat1.png" id="18_ityuy"]
+[ext_resource type="Texture2D" uid="uid://cy6xli1bygfe0" path="res://sprites/Gnomestab/gnomestab1.png" id="19_5cten"]
+[ext_resource type="Texture2D" uid="uid://bjjje3fbwtv2b" path="res://sprites/Gnomestab/gnomestab2.png" id="20_4wkuw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dt2vp"]
 animations = [{
@@ -113,6 +115,23 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dt2vp"]
 radius = 17.029387
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ule3a"]
+size = Vector2(20, 113.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37vrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_5cten")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4wkuw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="gnome" type="CharacterBody2D" unique_id=509993801]
 script = ExtResource("1_h6a62")
 
@@ -134,3 +153,18 @@ texture = ExtResource("18_ityuy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=497208103]
 position_smoothing_enabled = true
+
+[node name="Knife" type="Area2D" parent="." unique_id=541814684]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knife" unique_id=1280899060]
+position = Vector2(0, 57.25)
+shape = SubResource("RectangleShape2D_ule3a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Knife" unique_id=1835366091]
+position = Vector2(-0.99999994, 27.999996)
+scale = Vector2(1.28125, 2.703125)
+sprite_frames = SubResource("SpriteFrames_37vrp")
+autoplay = "default"
+frame = 1
+frame_progress = 1.0

@@ -104,6 +104,9 @@ radius = 31.06445
 [sub_resource type="CircleShape2D" id="CircleShape2D_gb326"]
 radius = 490.2948
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gb326"]
+bg_color = Color(0.7294118, 0.3019608, 0.22352941, 1)
+
 [node name="Threadbug" type="CharacterBody2D" unique_id=740748573]
 script = ExtResource("1_8c8fl")
 
@@ -126,4 +129,14 @@ shape = SubResource("CircleShape2D_ksl7d")
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1288594610]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=514266110]
+position = Vector2(-4, 2)
 shape = SubResource("CircleShape2D_gb326")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=963627398]
+offset_left = -91.0
+offset_top = -73.0
+offset_right = 92.0
+offset_bottom = -46.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_gb326")
+max_value = 50.0
+show_percentage = false

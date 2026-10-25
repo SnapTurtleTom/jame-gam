@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bfinhtgav80xx"]
+
+[ext_resource type="Script" uid="uid://bevapd5kcvy8j" path="res://scripts/main.gd" id="1_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://cwb81qijepw1m" path="res://sprites/Tiles/tile-grass.png" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://bvdbirc5evrrg" path="res://scripts/hatsmith.gd" id="2_tipki"]
+[ext_resource type="Texture2D" uid="uid://dahd55g8qyjjh" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle1.png" id="3_85g3d"]
+[ext_resource type="Texture2D" uid="uid://dbiu55xljivna" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle2.png" id="4_choun"]
+[ext_resource type="Texture2D" uid="uid://db1je7mb0lhvj" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle3.png" id="5_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://b8etqgtvqma8y" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-talk/Hatsmith-talk.png" id="6_eb6dy"]
+[ext_resource type="Script" uid="uid://bd8rkh8brior2" path="res://scripts/quest.gd" id="7_trceg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vw27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_85g3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_choun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ya4ey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_eb6dy")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
+radius = 32.06244
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
+radius = 117.01709
+
+[node name="main" type="Node2D" unique_id=669635151]
+position = Vector2(585, 323)
+script = ExtResource("1_o6xl0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2006017942]
+offset_left = -1353.0
+offset_top = -1163.0
+offset_right = 1359.0
+offset_bottom = 1229.0
+texture = ExtResource("2_85g3d")
+stretch_mode = 1
+
+[node name="hatsmith" type="CharacterBody2D" parent="." unique_id=1539668161]
+script = ExtResource("2_tipki")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hatsmith" unique_id=40983132]
+position = Vector2(-16, 4)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_5vw27")
+animation = &"talking"
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="hatsmith" unique_id=1640293094]
+position = Vector2(-16, 4)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_5vw27")
+animation = &"talking"
+autoplay = "default"
+
+[node name="HatsmithCollision" type="CollisionShape2D" parent="hatsmith" unique_id=885826814]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_h2yge")
+
+[node name="Area2D" type="Area2D" parent="hatsmith" unique_id=2120524908]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hatsmith/Area2D" unique_id=1211568086]
+shape = SubResource("CircleShape2D_0xm2m")
+
+[node name="FirstQuest" type="Node" parent="hatsmith" unique_id=2069364091]
+script = ExtResource("7_trceg")
+quest_name = "Collect 3 Threads"
+quest_description = "Kill Threadbugs for their skin"
+reached_goal_text = "Come back and I'll make a hat out of their skin"
+metadata/_custom_type_script = "uid://bd8rkh8brior2"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227880966]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=769067034]
+autostart = true
+
+[node name="GoToHatsmith" type="Node" parent="." unique_id=1035487496]
+script = ExtResource("7_trceg")
+quest_name = "Talk to Hatsmth"
+quest_description = "Walk up to Hatsmith and press \"E\""
+metadata/_custom_type_script = "uid://bd8rkh8brior2"
