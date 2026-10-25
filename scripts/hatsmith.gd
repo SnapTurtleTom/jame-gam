@@ -10,6 +10,7 @@ var starting_text_done: bool = false
 var starting_hat_given: bool = false
 var dialogue_instant: Node
 var player: CharacterBody2D = null
+var health := 50
 
 func _ready() -> void:
 	interact_radius.body_entered.connect(_on_area_2d_body_entered)

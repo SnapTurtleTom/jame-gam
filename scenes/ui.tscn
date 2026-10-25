@@ -40,3 +40,21 @@ offset_top = 88.0
 offset_right = 320.0
 offset_bottom = 192.0
 text = "Quest Description"
+
+[node name="DeathScreen" type="CanvasLayer" parent="." unique_id=452953358]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DeathScreen" unique_id=351869298]
+offset_left = 478.0
+offset_top = 150.0
+offset_right = 680.0
+offset_bottom = 242.0
+theme_override_font_sizes/normal_font_size = 48
+text = "YA DIED"
+
+[node name="Respawn" type="Button" parent="DeathScreen" unique_id=182696224]
+offset_left = 442.0
+offset_top = 276.0
+offset_right = 702.0
+offset_bottom = 337.0
+text = "RESPAWN?"

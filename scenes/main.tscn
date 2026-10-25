@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfinhtgav80xx"]
 
 [ext_resource type="Script" uid="uid://bevapd5kcvy8j" path="res://scripts/main.gd" id="1_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://cwb81qijepw1m" path="res://sprites/Tiles/tile-grass.png" id="2_85g3d"]
 [ext_resource type="Script" uid="uid://bvdbirc5evrrg" path="res://scripts/hatsmith.gd" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://dahd55g8qyjjh" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle1.png" id="3_85g3d"]
 [ext_resource type="Texture2D" uid="uid://dbiu55xljivna" path="res://sprites/Hatsmith/Hatsmith/Hatsmith-idle/Hatsmith-idle2.png" id="4_choun"]
@@ -42,6 +43,14 @@ radius = 117.01709
 [node name="main" type="Node2D" unique_id=669635151]
 position = Vector2(585, 323)
 script = ExtResource("1_o6xl0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2006017942]
+offset_left = -1121.0
+offset_top = -963.0
+offset_right = 1079.0
+offset_bottom = 997.0
+texture = ExtResource("2_85g3d")
+stretch_mode = 1
 
 [node name="hatsmith" type="CharacterBody2D" parent="." unique_id=1539668161]
 script = ExtResource("2_tipki")

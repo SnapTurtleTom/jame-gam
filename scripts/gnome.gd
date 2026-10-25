@@ -8,8 +8,11 @@ var input_direction:= Vector2.ZERO
 var last_direction:= Vector2.ZERO
 var current_hat: Sprite2D = null
 var current_health = 100
+var parent: Node
 
 func _ready():
+	parent = self.get_parent()
+	
 	animated_sprite.play("forward-idle")
 	
 	for child in get_children():
@@ -24,6 +27,13 @@ func get_input():
 		last_direction = input_direction
 
 func _physics_process(delta):
+	if current_health <= 0:
+		parent.current_hat_backup = current_hat
+		remove_child(parent.current_hat_backup)
+		parent.add_child(parent.current_hat_backup)
+		queue_free()
+		ui.death_screen.visible = true
+	
 	get_input()
 	if input_direction.length() <= 0.05:
 		idle_animation(last_direction)
@@ -52,9 +62,10 @@ func movement_animation(input_direction: Vector2):
 	elif input_direction.x < 0:
 		animated_sprite.play("left-walk")
 
-func change_hat(new_hat, current_hat: Sprite2D):
-	if current_hat != null:
-		current_hat.hide()
+func change_hat(new_hat, old_hat: Sprite2D):
+	if old_hat != null:
+		old_hat.hide()
 	
+	old_hat = new_hat
+	old_hat.visible = true
 	current_hat = new_hat
-	current_hat.visible = true
