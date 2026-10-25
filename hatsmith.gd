@@ -15,6 +15,9 @@ func _ready() -> void:
 	interact_radius.body_exited.connect(_on_area_2d_body_exited)
 
 func _physics_process(delta: float) -> void:
+	if dialogue_instant != null and dialogue_instant.is_dialogue_active == false and starting_text_done == false:
+		player.change_hat(player.get_node("StarterHat"), player.current_hat)
+		starting_text_done = true
 	
 	if in_range and Input.is_action_just_pressed("interact"):
 		if starting_text_done == false:
@@ -23,9 +26,6 @@ func _physics_process(delta: float) -> void:
 			"What's that?",
 			"You don't have a starting hat?!?!?!",
 			"We can't allow that can we, here! This is your very own hat!"])
-			if dialogue_instant.is_dialogue_active == false:
-				player.change_hat(player.get_node("StarterHat"), player.current_hat)
-				starting_text_done = true
 		else:
 			initialise_dialogue(["screw you"])
 

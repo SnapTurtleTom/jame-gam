@@ -38,6 +38,9 @@ radius = 32.06244
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
 radius = 117.01709
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+bg_color = Color(0.8666667, 0.18039216, 0.23921569, 1)
+
 [node name="main" type="Node2D" unique_id=669635151]
 position = Vector2(585, 323)
 script = ExtResource("1_ig7tw")
@@ -52,6 +55,13 @@ sprite_frames = SubResource("SpriteFrames_5vw27")
 animation = &"talking"
 autoplay = "default"
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="hatsmith" unique_id=1640293094]
+position = Vector2(-16, 4)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_5vw27")
+animation = &"talking"
+autoplay = "default"
+
 [node name="HatsmithCollision" type="CollisionShape2D" parent="hatsmith" unique_id=885826814]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_h2yge")
@@ -60,3 +70,13 @@ shape = SubResource("CircleShape2D_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hatsmith/Area2D" unique_id=1211568086]
 shape = SubResource("CircleShape2D_0xm2m")
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1239286311]
+
+[node name="HealthBar" type="ProgressBar" parent="ui" unique_id=1722908668]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 315.0
+offset_bottom = 43.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7mycd")
+value = 100.0

@@ -7,6 +7,7 @@ class_name Player
 var input_direction:= Vector2.ZERO
 var last_direction:= Vector2.ZERO
 var current_hat: Sprite2D = null
+var current_health = 100
 
 func _ready():
 	animated_sprite.play("forward-idle")

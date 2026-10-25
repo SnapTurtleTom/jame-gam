@@ -127,4 +127,8 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_dt2vp")
 
 [node name="StarterHat" type="Sprite2D" parent="." unique_id=819065185]
+visible = false
 texture = ExtResource("19_3rudp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=497208103]
+position_smoothing_enabled = true
