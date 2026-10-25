@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cpffaym11veam"]
+
+[ext_resource type="Script" uid="uid://424v4cumbj74" path="res://scripts/gnome.gd" id="1_h6a62"]
+[ext_resource type="Texture2D" uid="uid://dskcjsi56k7tg" path="res://sprites/Gnome/Gnome/Gnome-idle/Gnome-backwardsidle1.png" id="2_fu0vo"]
+[ext_resource type="Texture2D" uid="uid://cmkf3y4hn82v0" path="res://sprites/Gnome/Gnome/Gnome-backwardswalk/Gnome-backwardswalk1.png" id="3_5cten"]
+[ext_resource type="Texture2D" uid="uid://bbgwuawgwy8hn" path="res://sprites/Gnome/Gnome/Gnome-backwardswalk/Gnome-backwardswalk2.png" id="4_4wkuw"]
+[ext_resource type="Texture2D" uid="uid://dxi2dqc7m3p25" path="res://sprites/Gnome/Gnome/Gnome-idle/gnome-idle1.png" id="5_ule3a"]
+[ext_resource type="Texture2D" uid="uid://dw15pktnkvdag" path="res://sprites/Gnome/Gnome/Gnome-forwardwalk/gnome-forwardwalk1.png" id="6_37vrp"]
+[ext_resource type="Texture2D" uid="uid://77nmeg3uxfkk" path="res://sprites/Gnome/Gnome/Gnome-forwardwalk/gnome-forwardwalk2.png" id="7_1has1"]
+[ext_resource type="Texture2D" uid="uid://bf26ag8xigbpl" path="res://sprites/Gnome/Gnome/Gnome-idle/gnome-leftidle.png" id="8_tk54h"]
+[ext_resource type="Texture2D" uid="uid://vwqx0x5b4yj" path="res://sprites/Gnome/Gnome/Gnome-leftwalk/gnome-leftwalkwalk1.png" id="9_kygu7"]
+[ext_resource type="Texture2D" uid="uid://dyygixwuajoin" path="res://sprites/Gnome/Gnome/Gnome-leftwalk/gnome-leftwalkwalk2.png" id="10_r5ggr"]
+[ext_resource type="Texture2D" uid="uid://de4gg8orf30f6" path="res://sprites/Gnome/Gnome/Gnome-leftwalk/gnome-leftwalkwalk3.png" id="11_4q2yq"]
+[ext_resource type="Texture2D" uid="uid://dws0qdqgikxcq" path="res://sprites/Gnome/Gnome/Gnome-leftwalk/gnome-leftwalkwalk4.png" id="12_f6wg6"]
+[ext_resource type="Texture2D" uid="uid://dovkpw30pcsvv" path="res://sprites/Gnome/Gnome/Gnome-idle/gnome-rightidle.png" id="13_217vo"]
+[ext_resource type="Texture2D" uid="uid://ha540qd05csj" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk1.png" id="14_1d080"]
+[ext_resource type="Texture2D" uid="uid://caomv64x8gy6a" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk2.png" id="15_48prh"]
+[ext_resource type="Texture2D" uid="uid://cu3lwxho2ksla" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk3.png" id="16_864t2"]
+[ext_resource type="Texture2D" uid="uid://coacppsitwvfh" path="res://sprites/Gnome/Gnome/Gnome-rightwalk/gnome-rightwalk4.png" id="17_f4nhb"]
+[ext_resource type="Texture2D" uid="uid://cno52pfaxu4bg" path="res://sprites/Hats/Hats/Hat1.png" id="18_ityuy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dt2vp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fu0vo")
+}],
+"loop": true,
+"name": &"backwards-idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5cten")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4wkuw")
+}],
+"loop": true,
+"name": &"backwards-walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ule3a")
+}],
+"loop": true,
+"name": &"forward-idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_37vrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1has1")
+}],
+"loop": true,
+"name": &"forward-walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tk54h")
+}],
+"loop": true,
+"name": &"left-idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_kygu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r5ggr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4q2yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f6wg6")
+}],
+"loop": true,
+"name": &"left-walk",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_217vo")
+}],
+"loop": true,
+"name": &"right-idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_1d080")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_48prh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_864t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_f4nhb")
+}],
+"loop": true,
+"name": &"right-walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dt2vp"]
+radius = 17.029387
+
+[node name="gnome" type="CharacterBody2D" unique_id=509993801]
+script = ExtResource("1_h6a62")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=517582151]
+position = Vector2(-3, 4)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_dt2vp")
+animation = &"left-walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=267362150]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_dt2vp")
+
+[node name="StarterHat" type="Sprite2D" parent="." unique_id=819065185]
+visible = false
+position = Vector2(-4, -12)
+scale = Vector2(2, 2)
+texture = ExtResource("18_ityuy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=497208103]
+position_smoothing_enabled = true

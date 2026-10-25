@@ -76,7 +76,20 @@ shape = SubResource("CircleShape2D_0xm2m")
 [node name="HealthBar" type="ProgressBar" parent="ui" unique_id=1722908668]
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 315.0
+offset_right = 320.0
 offset_bottom = 43.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_7mycd")
 value = 100.0
+
+[node name="ToDo" type="Label" parent="ui" unique_id=668431542]
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 320.0
+offset_bottom = 80.0
+text = "To do:"
+
+[node name="Quests" type="Label" parent="ui" unique_id=927700772]
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 320.0
+offset_bottom = 256.0

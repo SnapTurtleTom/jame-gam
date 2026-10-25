@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://devklilgjgxth"]
+
+[ext_resource type="Script" uid="uid://cqsi27qsispim" path="res://scripts/ui.gd" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://cnorgu35hvsml" path="res://sprites/Misc/Questboard.png" id="2_x4jx1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyqef"]
+bg_color = Color(0.7278359, 0.3031449, 0.22326097, 1)
+
+[node name="UI" type="Node2D" unique_id=142508588]
+script = ExtResource("1_nt7q6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=535246178]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=1017568601]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 320.0
+offset_bottom = 43.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_fyqef")
+
+[node name="QuestBox" type="CanvasLayer" parent="." unique_id=1564321296]
+visible = false
+
+[node name="QuestBackground" type="Sprite2D" parent="QuestBox" unique_id=1992932571]
+position = Vector2(163.99998, 136)
+scale = Vector2(2.4999998, 2.7499998)
+texture = ExtResource("2_x4jx1")
+
+[node name="QuestTitle" type="RichTextLabel" parent="QuestBox" unique_id=708265577]
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 320.0
+offset_bottom = 96.0
+theme_override_colors/default_color = Color(0, 0, 0, 0.7176471)
+text = "Quest Title"
+
+[node name="QuestDescription" type="RichTextLabel" parent="QuestBox" unique_id=1905975395]
+offset_left = 32.0
+offset_top = 88.0
+offset_right = 320.0
+offset_bottom = 192.0
+text = "Quest Description"

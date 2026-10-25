@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @onready var interact_radius: Area2D = $Area2D
 @onready var head_marker: Marker2D = $HeadMarker
+@onready var first_quest: Quest = $FirstQuest
 
-const DIALOGUE_SCENE = preload("res://dialogue_manager.tscn")
+const DIALOGUE_SCENE = preload("res://scenes/dialogue_manager.tscn")
 var in_range: bool = false
 var starting_text_done: bool = false
 var starting_hat_given: bool = false
@@ -18,6 +19,11 @@ func _physics_process(delta: float) -> void:
 	if dialogue_instant != null and dialogue_instant.is_dialogue_active == false and starting_text_done == false:
 		player.change_hat(player.get_node("StarterHat"), player.current_hat)
 		starting_text_done = true
+		
+		if first_quest.quest_status == first_quest.QuestStatus.available:
+			first_quest.start_quest()
+	
+	
 	
 	if in_range and Input.is_action_just_pressed("interact"):
 		if starting_text_done == false:
